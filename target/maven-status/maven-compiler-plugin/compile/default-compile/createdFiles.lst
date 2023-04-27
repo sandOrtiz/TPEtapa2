@@ -1,0 +1,17 @@
+Lectores\ArchivoResultado.class
+Modelo\Ronda.class
+Menu\Menu.class
+Lectores\LectorPuntos.class
+Lectores\ArchivoPronostico.class
+Modelo\Puntos.class
+Menu\MenuConfiguracion.class
+Modelo\ResultadoEnum.class
+Modelo\Equipo.class
+org\example\Main.class
+Lectores\LectorSQL.class
+Conexion\SQL\ConectorSQL.class
+Lectores\LectorCSV.class
+Modelo\ObtenerDatos.class
+Menu\MenuPrincipal.class
+Modelo\Partido.class
+Modelo\Pronostico.class

@@ -1,8 +1,6 @@
 package Modelo;
 
 public enum ResultadoEnum {
-    Gana,
-    Pierde,
-    Empate,
+    Gana,  Pierde,  Empate,
 
  }

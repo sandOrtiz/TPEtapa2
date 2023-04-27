@@ -3,13 +3,13 @@ package Modelo;
 import java.util.ArrayList;
 
 public class Partido {
-    private String id;
+    private int id;
     private Equipo equipo1;
     private Equipo equipo2;
     private int golesEquipo1;
     private int golesEquipo2;
 
-    public Partido(String id, Equipo equipo1, Equipo equipo2, int golesEquipo1, int golesEquipo2) {
+    public Partido(int id, Equipo equipo1, Equipo equipo2, int golesEquipo1, int golesEquipo2) {
         this.id = id;
         this.equipo1 = equipo1;
         this.equipo2 = equipo2;
@@ -17,11 +17,11 @@ public class Partido {
         this.golesEquipo2 = golesEquipo2;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId (int id) {
         this.id = id;
     }
 
@@ -57,26 +57,41 @@ public class Partido {
         this.golesEquipo2 = golesEquipo2;
     }
 
-    public static Partido buscarPartido(ArrayList<Partido> partidos, String idPartido) {
+    public static Partido buscarPartido(ArrayList<Partido> partidos, int idPartido) {
         for (Partido partidoDeLaLista : partidos){
-            if (partidoDeLaLista.getId().equals(idPartido)) return partidoDeLaLista;
+            if (partidoDeLaLista.getId() == (idPartido)) return partidoDeLaLista;
         }
         return null;
     }
 
-    public ResultadoEnum resultado(Equipo equipo) {
-        ResultadoEnum resultadoFinal;
-        if (golesEquipo1 > golesEquipo2) {
-            resultadoFinal =  ResultadoEnum.Gana;
-        } else if(golesEquipo1 < golesEquipo2) {
-            resultadoFinal = ResultadoEnum.Pierde;
-        }else {
-            resultadoFinal = ResultadoEnum.Empate;
+    public ResultadoEnum resultado() {
+        if (golesEquipo1 == golesEquipo2) {
+            return ResultadoEnum.Empate;
         }
-        return resultadoFinal;
-
+        if (golesEquipo1 > golesEquipo2) {
+            return ResultadoEnum.Gana;
+        }else {
+           return ResultadoEnum.Pierde;
+        }
     }
-
+    public ResultadoEnum resultadoTest(Equipo equipo) {
+        if (golesEquipo1 == golesEquipo2) {
+            return ResultadoEnum.Empate;
+        }
+        if (equipo.getNombre().equals(equipo1.getNombre())) {
+            if (golesEquipo1 > golesEquipo2) {
+                return ResultadoEnum.Gana;
+            } else {
+                return ResultadoEnum.Pierde;
+            }
+        }else {
+            if(golesEquipo2 > golesEquipo1){
+                return ResultadoEnum.Gana;
+            }else{
+                return ResultadoEnum.Pierde;
+            }
+        }
+    }
 }
 
 

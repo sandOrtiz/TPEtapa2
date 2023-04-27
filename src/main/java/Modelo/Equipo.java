@@ -3,21 +3,21 @@ package Modelo;
 import java.util.ArrayList;
 
 public class Equipo {
-    private String idEquipo;
+    private int idEquipo;
     private String nombre;
     private String descripcion;
 
-    public Equipo(String idEquipo, String nombre, String descripcion) {
+    public Equipo(int idEquipo, String nombre, String descripcion) {
         this.idEquipo = idEquipo;
         this.nombre = nombre;
         this.descripcion = descripcion;
     }
 
-    public String getIdEquipo() {
+    public int getIdEquipo() {
         return idEquipo;
     }
 
-    public void setIdEquipo(String nuevoId) {
+    public void setIdEquipo(int nuevoId) {
         this.idEquipo = nuevoId;
     }
 
@@ -38,9 +38,9 @@ public class Equipo {
         this.descripcion = descripcion;
     }
 
-    public static Equipo buscarEquipo(ArrayList<Equipo> equipos, String idEquipo) {
+    public static Equipo buscarEquipo(ArrayList<Equipo> equipos, int idEquipo) {
         for (Equipo equipoDeLaLista : equipos) {
-            if (equipoDeLaLista.idEquipo.equals(idEquipo)) return equipoDeLaLista;
+            if (equipoDeLaLista.idEquipo == idEquipo) return equipoDeLaLista;
         }
         return null;
     }
